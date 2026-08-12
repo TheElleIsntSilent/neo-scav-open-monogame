@@ -2,12 +2,13 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGameLibrary;
+using MonoGameLibrary.Graphics;
 
 namespace NeoScavOpen;
 
 public class Game1 : Core
 {
-
+    private Sprite _testButton;
 
     public Game1() : base("NeoScavOpen", 1280, 720, false)
     {
@@ -16,16 +17,15 @@ public class Game1 : Core
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
     }
 
     protected override void LoadContent()
     {
         base.LoadContent();
-
-        // TODO: use this.Content to load your game content here
+        TextureAtlas atlas = new TextureAtlas();
+        atlas.FromFolder(GraphicsDevice, Config.DATAPATH);
+        _testButton = atlas.CreateSprite("TestButton");
     }
 
     protected override void Update(GameTime gameTime)
@@ -33,7 +33,6 @@ public class Game1 : Core
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        // TODO: Add your update logic here
 
         base.Update(gameTime);
     }
@@ -42,7 +41,9 @@ public class Game1 : Core
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
+        SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        _testButton.Draw(SpriteBatch, Vector2.Zero);
+        SpriteBatch.End();
 
         base.Draw(gameTime);
     }
