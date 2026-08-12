@@ -29,4 +29,12 @@
   <ItemGroup>
     <ProjectReference Include="..\MonoGameLibrary\MonoGameLibrary.csproj" />
   </ItemGroup>
+  <Target Name="CopyDataFolder" AfterTargets="Build">
+    <ItemGroup>
+        <DataFiles Include="$(MSBuildProjectDirectory)\data\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DataFiles)"
+          DestinationFolder="$(OutDir)data\%(RecursiveDir)"
+          SkipUnchangedFiles="true" />
+  </Target>
 </Project>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>images/atlas</Texture>
+    <Path path=".\data\" />
+    <Regions>
+        <Region name="TestButton" />
+        <Region name="TestButtonF1"  />
+        <Region name="TestButtonF2"  />
+        <Region name="TestButtonF3"  />
+        <Region name="TestButton_pressed" />
+    </Regions>
+     <Animations>
+        <Animation name="TestButton-Animation" delay="200">
+            <Frame region="TestButtonF1" />
+            <Frame region="TestButtonF2" />
+            <Frame region="TestButtonF3" />
+        </Animation>
+    </Animations>
+</TextureAtlas>
