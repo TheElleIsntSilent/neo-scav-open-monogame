@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using MonoGameLibrary;
 using MonoGameLibrary.Graphics;
 using MonoGameLibrary.Input;
+using NeoScavOpen.Scenes;
 
 namespace NeoScavOpen;
 
@@ -22,16 +23,19 @@ public class Game1 : Core
     protected override void Initialize()
     {
         base.Initialize();
+        
+        // Start the game with the title scene.
+        ChangeScene(new TitleScene());
     }
 
     protected override void LoadContent()
     {
-        base.LoadContent();
-        TextureAtlas atlas = new TextureAtlas();
-        atlas.FromFolder(GraphicsDevice, Config.DATAPATH);
-        _testButton = atlas.CreateSprite("TestButton");
-        Tileset tileset = new Tileset(atlas.GetRegion("GUICell"),10, 10);
-        _containerTilemap = Tilemap.FromSingleTile(tileset, 4, 6);
+        //base.LoadContent();
+        //TextureAtlas atlas = new TextureAtlas();
+        //atlas.FromFolder(GraphicsDevice, Config.DATAPATH);
+        //_testButton = atlas.CreateSprite("TestButton");
+        //Tileset tileset = new Tileset(atlas.GetRegion("GUICell"),10, 10);
+        //_containerTilemap = Tilemap.FromSingleTile(tileset, 35, 80);
     }
 
     protected override void Update(GameTime gameTime)
