@@ -36,21 +36,23 @@ public override void Initialize()
     Core.ExitOnEscape = true;
 
     // Set the position and origin for the Dungeon text.
-    //Vector2 size = _font.MeasureString(TITLE_TEXT);
-    Vector2 size = _font.MeasureString("ABC");
-    _dungeonTextPos = new Vector2(640, 100);
-    _dungeonTextOrigin = size * 0.5f;
+    Vector2 size = _font.MeasureString(TITLE_TEXT);
+    //Vector2 size = _font.MeasureString("ABC");
+    //_dungeonTextPos = new Vector2(640, 100);
+    //_dungeonTextOrigin = size * 0.5f;
 
     // Set the position and origin for the press enter text.
-    size = _font.MeasureString(PRESS_ENTER_TEXT);
-    _pressEnterPos = new Vector2(640, 620);
-    _pressEnterOrigin = size * 0.5f;
+    //size = _font.MeasureString(PRESS_ENTER_TEXT);
+    //_pressEnterPos = new Vector2(640, 620);
+    //_pressEnterOrigin = size * 0.5f;
 }
 
 public override void LoadContent()
 {
     // Load the font for the standard text.
-    _font = Core.Content.Load<SpriteFont>("Fonts/DefaultFont");
+    //_font = Core.Content.Load<SpriteFont>("Fonts/DefaultFont");
+    // Load the font
+    _font = Content.Load<SpriteFont>("fonts/Font");
 
 }
 
@@ -75,16 +77,17 @@ public override void Draw(GameTime gameTime)
 
     // Draw the Dungeon text slightly offset from it is original position and
     // with a transparent color to give it a drop shadow.
-    Core.SpriteBatch.DrawString(_font, TITLE_TEXT, _dungeonTextPos + new Vector2(10, 10), dropShadowColor, 0.0f, _dungeonTextOrigin, 1.0f, SpriteEffects.None, 1.0f);
+    //Core.SpriteBatch.DrawString(_font, TITLE_TEXT, _dungeonTextPos + new Vector2(10, 10), dropShadowColor, 0.0f, _dungeonTextOrigin, 1.0f, SpriteEffects.None, 1.0f);
 
     // Draw the Dungeon text on top of that at its original position.
-    Core.SpriteBatch.DrawString(_font, TITLE_TEXT, _dungeonTextPos, Color.White, 0.0f, _dungeonTextOrigin, 1.0f, SpriteEffects.None, 1.0f);
+    //Core.SpriteBatch.DrawString(_font, TITLE_TEXT, _dungeonTextPos, Color.White, 0.0f, _dungeonTextOrigin, 1.0f, SpriteEffects.None, 1.0f);
 
     // Draw the press enter text.
-    Core.SpriteBatch.DrawString(_font, PRESS_ENTER_TEXT, _pressEnterPos, Color.White, 0.0f, _pressEnterOrigin, 1.0f, SpriteEffects.None, 0.0f);
-
-    // Always end the sprite batch when finished.
+    //Core.SpriteBatch.DrawString(_font, PRESS_ENTER_TEXT, _pressEnterPos, Color.White, 0.0f, _pressEnterOrigin, 1.0f, SpriteEffects.None, 0.0f);
+    Core.SpriteBatch.DrawString(_font, "Hello, MonoGame!", new Vector2(100, 100), Color.White);
     Core.SpriteBatch.End();
+
+    
 }
 
 }

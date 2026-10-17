@@ -13,13 +13,13 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Fonts/DefaultFont.spritefont
+#begin Fonts/Font.spritefont
 /importer:FontDescriptionImporter
 /processor:LocalizedFontProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /processorParam:Version=3.8.5.0
-/build:Fonts/DefaultFont.spritefont
+/build:Fonts/Font.spritefont
 
 #begin TestButton_pressed.png
 /importer:TextureImporter

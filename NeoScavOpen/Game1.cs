@@ -30,10 +30,10 @@ public class Game1 : Core
 
     protected override void LoadContent()
     {
-        //base.LoadContent();
-        //TextureAtlas atlas = new TextureAtlas();
-        //atlas.FromFolder(GraphicsDevice, Config.DATAPATH);
-        //_testButton = atlas.CreateSprite("TestButton");
+        base.LoadContent();
+        TextureAtlas atlas = new TextureAtlas();
+        atlas.FromFolder(GraphicsDevice, Config.DATAPATH);
+        _testButton = atlas.CreateSprite("TestButton");
         //Tileset tileset = new Tileset(atlas.GetRegion("GUICell"),10, 10);
         //_containerTilemap = Tilemap.FromSingleTile(tileset, 35, 80);
     }
@@ -84,10 +84,10 @@ public class Game1 : Core
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        _testButton.Draw(SpriteBatch, Vector2.Zero);
-        _containerTilemap.Draw(SpriteBatch);
-        SpriteBatch.End();
+        //SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        //_testButton.Draw(SpriteBatch, Vector2.Zero);
+        //_containerTilemap.Draw(SpriteBatch);
+        //SpriteBatch.End();
 
         base.Draw(gameTime);
     }
